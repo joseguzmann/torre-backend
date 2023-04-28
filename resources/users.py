@@ -1,7 +1,7 @@
 import requests
 from flask import jsonify
 from flask.views import MethodView
-from flask_smorest import Blueprint, abort, arguments
+from flask_smorest import Blueprint, abort
 
 
 blp = Blueprint("Users", "users", description="Retrieve information about users")
