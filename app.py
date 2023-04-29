@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_smorest import Api
+from flask_cors import CORS
 
 from resources.users import blp as UsersBlueprint
 
@@ -13,6 +14,9 @@ def create_app():
     app.config["OPENAPI_URL_PREFIX"] = "/"
     app.config["OPENAPI_SWAGGER_UI_PATH"] = "/swagger-ui"
     app.config["OPENAPI_SWAGGER_UI_URL"] = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/"
+
+    CORS(app)
+
     api = Api(app)
 
     api.register_blueprint(UsersBlueprint)
